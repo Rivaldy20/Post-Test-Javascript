@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post test Javascript</title>
+    <script type="text/javascript">
+        function InputOutput(){
+            let hari = document.getElementById("input-Hari-if-else").value;
+ 
+            if(hari == "senin" || hari == "Senin") {
+                besok = "hari esok adalah hari Selasa";
+            } else if(hari == "selasa" || hari == "Selasa"){
+                besok ="hari esok adalah hari Rabu";
+            } else if(hari == "rabu" || hari == "Rabu"){
+                besok ="hari esok adalah hari Kamis";
+            }else if(hari == "kamis" || hari == "kamis"){
+                besok ="hari esok adalah hari Jumat";
+            }else if(hari == "jumat" || hari == "Jumat"){
+                besok ="hari esok adalah hari Sabtu";
+            }else if(hari == "sabtu" || hari == "Sabtu"){
+                besok ="hari esok adalah hari Minggu";
+            }else if(hari == "minggu" || hari == "Minggu"){
+                besok ="hari esok adalah hari Senin";
+            }else{
+                besok = "Sepertinya kamu salah input"
+            }
+            document.getElementById("output-Hari-if-else").value = besok;
+        }
+
+        function InputHari(){
+            let Esok = document.getElementById("input-hari-switch-case").value;
+
+            switch(Esok) {
+                case "senin":
+                    besok = "hari esok adalah hari Selasa";
+                        break;
+                case "Senin":
+                    besok = "hari esok adalah hari Selasa";
+                        break;
+                case "selasa":
+                    besok = "hari esok adalah hari Rabu";
+                        break;
+                case "Selasa":
+                    besok = "hari esok adalah hari Rabu";
+                        break;
+                case "rabu":
+                    besok = "hari esok adalah hari Kamis";
+                        break;
+                case "Rabu":
+                    besok = "hari esok adalah hari Kamis";
+                        break;
+                case "kamis":
+                    besok = "hari esok adalah hari Jumat";
+                        break;
+                case "Kamis":
+                    besok = "hari esok adalah hari Jumat";
+                        break;
+                case "jumat":
+                    besok = "hari esok adalah hari Sabtu";
+                        break;
+                case "Jumat":
+                    besok = "hari esok adalah hari Sabtu";
+                        break;
+                case "sabtu":
+                    besok = "hari esok adalah hari Minggu";
+                        break;
+                case "Sabtu":
+                    besok = "hari esok adalah hari Minggu";
+                        break;
+                case "minggu":
+                    besok = "hari esok adalah hari Senin";
+                        break;
+                case "Minggu":
+                    besok = "hari esok adalah hari Senin";
+                        break;
+                default:
+                    besok = "Sepertinya kamu salah input";
+            }
+            document.getElementById("output-hari-switch-case").value = besok;
+        }
+
+        function Genap(){
+            let text =" ";
+            let Genap = document.getElementById("inputGenap").value;
+            for (let i = 0; i <= Genap; i+=2){
+             text += i +','; 
+            }
+            document.getElementById("listgenap").innerHTML = text;
+        }
+
+        function Ganjil(){
+            let text =" ";
+            let Ganjil = document.getElementById("inputGanjil").value;
+            for (let i = 1; i <= Ganjil; i+=2){
+             text += i +','; 
+            }
+            document.getElementById("listganjil").innerHTML = text;
+        }
+        
+        function Prima(){
+
+            /*let Prima = document.getElementById("inputGenap").value;
+            let text = false;
+           
+            for (let i = 2; i<= Prima; i++){
+                if(i >= 2){
+                    text = true;
+
+                    for (let a = 2; a < i; a++){
+                        if (i%a == 0){
+                            text = false;
+                        }
+                    }
+                }
+                    if (text == true){
+                       document.write(i);
+            }
+            }*/
+            let angka = document.getElementById("inputPrima").value;
+            let text =" ";
+            for (var i = 1; i <= angka ; i++) {
+
+                var num = 0;
+                for (var a = 1; a <= i; a++) {
+
+                    if (i % a == 0) {
+                    num++;
+                    }
+                }
+                if (num == 2) {
+                    text += i +','; 
+                }
+            }
+            document.getElementById("listprima").innerHTML = text;
+        }
+     </script>
+</head>
+<body>
+    <!--dibawah ini program 2A hari dengan if-else-->
+    <h2>Dibawah ini program menanyakan hari esok dengan If-Else</h2>
+    <div> (if-else) Masukan Nama Hari :</div>
+    <input type="text" id="input-Hari-if-else">
+    <div> (if-else) Hari esok adalah hari :</div>
+    <input type="text" id="output-Hari-if-else" disabled>
+    <input type="button" value="Cari hari esok" id="cari-if-else" onclick="InputOutput()">
+
+    <!--dibawah ini program 2A hari dengan Switch case-->
+    <h2>Dibawah ini program menanyakan hari esok dengan Switch Case</h2>
+    <div> (Switch Case) Masukan Nama Hari :</div>
+    <input type="text" id="input-hari-switch-case">
+    <div> (Switch Case) Hari esok adalah hari :</div>
+    <input type="text" id="output-hari-switch-case" disabled>
+    <input type="button" value="Cari hari esok" id="cari-switch-case" onclick="InputHari()">
+
+    <!--dibawah ini program 2B tampilan deret bilangan genap -->
+    <h2>Dibawah ini program tampilan deret bilangan genap</h2>
+    <div>  Masukan nilai maksimal angka yang ingin deretkan :</div>
+    <input type="number" id="inputGenap">
+    <div>  List deret bilangan genap :</div>
+    <div id="listgenap"></div>
+    <input type="button" value="Cari list genap" id="cariGenap" onclick="Genap()">
+
+    <!--dibawah ini program 2C tampilan deret bilangan ganjil -->
+    <h2>Dibawah ini program tampilan deret bilangan ganjil</h2>
+    <div> Masukan nilai maksimal angka yang ingin deretkan :</div>
+    <input type="text" id="inputGanjil">
+    <div> List deret bilangan ganjil :</div>
+    <div id="listganjil"></div>
+    <input type="button" value="Cari list ganjil" id="cariGanjil" onclick="Ganjil()">
+
+     <!--dibawah ini program 2D tampilan deret bilangan prima-->
+     <h2>Dibawah ini program tampilan deret bilangan prima</h2>
+    <div>  Masukan nilai maksimal angka yang ingin deretkan :</div>
+    <input type="text" id="inputPrima">
+    <div>  List deret bilangan prima :</div>
+    <div id="listprima"></div>
+    <input type="button" value="Cari list prima" id="cariPrima" onclick="Prima()">
+
+</body>
+</html>
